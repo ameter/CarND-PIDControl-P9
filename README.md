@@ -11,6 +11,9 @@ Self-Driving Car Engineer Nanodegree Program
 
 #### Describe the effect each of the P, I, D components had in your implementation.
 
+##### P (Proportional) Control
+- Steer as a proportion of cross track error.
+- Causes car to overshoot target path.
 
 
 #### Describe how the final hyperparameters were chosen.
