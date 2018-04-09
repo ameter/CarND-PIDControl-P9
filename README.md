@@ -26,9 +26,9 @@ Self-Driving Car Engineer Nanodegree Program
 
 ##### Testing Results
 
-P steers the car sharper based on how large the CTE is.  So, using only P caused the car the oscillate, increasinly overshooting the center until it crashed.  The following video shows the result of only using P-control:
+P steers the car sharper based on how large the CTE is.  So, using only P caused the car the oscillate, increasinly overshooting the center until it crashed.
 
-![alt text][vid_p_only]
+Here's a [link to a video showing the result of only using P-control](./writeup_images/p_only.mov)
 
 #### Describe how the final hyperparameters were chosen.
 
