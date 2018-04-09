@@ -3,6 +3,22 @@ Self-Driving Car Engineer Nanodegree Program
 
 ---
 
+## Reflection
+
+[//]: # (Video References)
+[vid_p_only]: ./writeup_images/p_only.mov
+[vid_pid]: ./writeup_images/pid_control.mov
+
+#### Describe the effect each of the P, I, D components had in your implementation.
+
+
+
+#### Describe how the final hyperparameters were chosen.
+
+The final hyperparameters (P, I, D coefficients) were determined through manual tuning.  I really liked the twiddle approach and spent some time attempting to implement it for this.  However, while the basic implementation was very easy, the interaction with the simulator (programmatically resetting it, etc.) was not.  Given more time, I would have continued working on the twiddle approash, but due to time constraints and the need to move on to the next project, I resorted to choosing hyperparameters through trial and error.  I did, however, modify main.cpp to accept the hyperparameters as command line parameters, which greatly speeded the manual tuning process.  While I'm confident more optimal hyperparameters could be obtained programmatically through twiddle or SGD, the identified parameters were sufficient for to meet the requirements of this project. 
+
+---
+
 ## Dependencies
 
 * cmake >= 3.5
