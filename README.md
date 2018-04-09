@@ -6,15 +6,29 @@ Self-Driving Car Engineer Nanodegree Program
 ## Reflection
 
 [//]: # (Video References)
-[vid_p_only]: ./writeup_images/p_only.mov
-[vid_pid]: ./writeup_images/pid_control.mov
+[vid_p_only]: ./writeup_images/p_only.mov "p_only"
+[vid_pid]: ./writeup_images/pid_control.mov "pid_control"
 
 #### Describe the effect each of the P, I, D components had in your implementation.
 
-##### P (Proportional) Control
+##### P (Proportional)
 - Steer as a proportion of cross track error.
 - Causes car to overshoot target path.
 
+##### I (Integral)
+- Steer as a proportion (P) of cross track error MINUS integral (I) (sum) of all CTEs.
+- Takes all previous CTEs into account to gradually adjust steering to imperfections in the system over time.
+- Used to compensate for imperfections in the system, such as such as steering alignment being slightly off.
+
+##### D (Differential)
+- Steer as a proportion (P) of cross track error MINUS temporal derivative (D) of the cte.
+- Reduces overshoot by allowing car to steer less sharply based on the difference of the error in the current sample vs the previous sample.
+
+##### Testing Results
+
+P steers the car sharper based on how large the CTE is.  So, using only P caused the car the oscillate, increasinly overshooting the center until it crashed.  The following video shows the result of only using P-control:
+
+![alt text][vid_p_only]
 
 #### Describe how the final hyperparameters were chosen.
 
