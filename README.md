@@ -5,14 +5,10 @@ Self-Driving Car Engineer Nanodegree Program
 
 ## Reflection
 
-[//]: # (Video References)
-[vid_p_only]: ./writeup_images/p_only.mov "p_only"
-[vid_pid]: ./writeup_images/pid_control.mov "pid_control"
-
 #### Describe the effect each of the P, I, D components had in your implementation.
 
 ##### P (Proportional)
-- Steer as a proportion of cross track error.
+- Steer as a proportion of cross track error (CTE).
 - Causes car to overshoot target path.
 
 ##### I (Integral)
@@ -26,9 +22,15 @@ Self-Driving Car Engineer Nanodegree Program
 
 ##### Testing Results
 
-P steers the car sharper based on how large the CTE is.  So, using only P caused the car the oscillate, increasinly overshooting the center until it crashed.
+Kp steers the car sharper based on how large the CTE is.  So, using only P caused the car the oscillate, increasinly overshooting the center until it crashed.
 
 Here's a [link to a video showing the result of only using P-control](./writeup_images/p_only.mov)
+
+Kd steers the car less sharply based on the difference of the CTE in the current sample vs the previous sample.  So including Kd in the controller reduced the overshoot observed in the P-controler above enough that the car was able to stay on the tack.
+
+Here's a [link to a video showing the result of only using PD-control](./writeup_images/pid_control.mov)
+
+Ki adjusts steering over time based on all previous CTEs.  Including it this implementation did not significantly improve the results.  This is most likely due to the fact that this implementation was executing in a simulator which was not susceptable to, nor did it artificially introduce, real-world imperfections such as steering alignment error, etc.
 
 #### Describe how the final hyperparameters were chosen.
 
